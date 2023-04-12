@@ -1,0 +1,77 @@
+{
+    "@id": "dtmi:digitaltwins:Basic:Turbine;1",
+    "@type": "Interface",
+    "@context": [
+        "dtmi:dtdl:context;2"
+    ],
+    "displayName": "Wind Turbine -v1",
+    "description": "Wind Turbine data",
+    "contents": [
+        {
+            "@type": "Property",
+            "name": "TurbineID",
+            "displayName": "TurbineID",
+            "description": "The unique id of the turbine",
+            "writable": true,
+            "schema": "string"
+        },
+        {
+            "@type": "Property",
+            "name": "Alert",
+            "displayName": "Alert",
+            "description": "whether or not this turbine needs maintenance",
+            "writable": true,
+            "schema": "boolean"
+        },
+        {
+            "@type": "Property",
+            "name": "TimeInterval",
+            "displayName": "TimeInterval",
+            "description":  "The time interval of this data",
+            "writable": true,
+            "schema": "string"
+        },
+        {
+            "@type": "Property",
+            "name": "Description",
+            "displayName": "Description",
+            "writable": true,
+            "schema": "string"
+        },
+        {
+            "@type": "Property",
+            "name": "Code",
+            "displayName": "Code",
+            "writable": true,
+            "schema": "integer"
+        },
+        {
+            "@type": "Property",
+            "name": "WindSpeed",
+            "displayName": "WindSpeed",
+            "writable": true,
+            "schema": "double"
+        },
+        {
+            "@type": "Property",
+            "name": "Ambient",
+            "displayName": "Ambient",
+            "writable": true,
+            "schema": "double"
+        },
+        {
+            "@type": "Property",
+            "name": "Rotor",
+            "displayName": "Rotor",
+            "writable": true,
+            "schema": "double"
+        },
+        {
+            "@type": "Property",
+            "name": "Power",
+            "displayName": "Power",
+            "writable": true,
+            "schema": "double"
+        }
+    ]
+}
