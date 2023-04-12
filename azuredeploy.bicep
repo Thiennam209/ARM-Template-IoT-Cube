@@ -39,14 +39,14 @@ resource iot 'microsoft.devices/iotHubs@2020-03-01' = {
   name: iotHubName
   location: location
   sku: {
-    name: 'F1'
+    name: 'S1'
     capacity: 1
   }
   properties: {
     eventHubEndpoints: {
       events: {
         retentionTimeInDays: 1
-        partitionCount: 2
+        partitionCount: 4
       }
     }
   }
@@ -121,6 +121,7 @@ resource appserver 'Microsoft.Web/serverfarms@2019-08-01' = {
     name: 'B1'
   }
 }
+
 // create Function app for hosting the IoTHub ingress and SignalR egress
 resource funcApp 'Microsoft.Web/sites@2019-08-01' = {
   name: funcAppName
@@ -191,7 +192,7 @@ resource appInsights 'Microsoft.Insights/components@2015-05-01' = {
 resource ingestfunction 'Microsoft.Web/sites/extensions@2015-08-01' = {
   name: '${funcApp.name}/MSDeploy'
   properties: {
-packageUri: 'https://github.com/MicrosoftDocs/mslearn-mr-adt-in-unity/raw/main/ARM-Template/functions/zipfiles/blade-functions.zip'
+packageUri: 'https://github.com/Thiennam209/ARM-Template-IoT-Cube/blob/main/functions/zipfiles/blade-functions.zip'
 dbType: 'None'
     connectionString: ''
   }
@@ -341,7 +342,7 @@ resource PostDeploymentscript 'Microsoft.Resources/deploymentScripts@2020-10-01'
     forceUpdateTag: utcValue
     azCliVersion: '2.15.0'
     arguments: '${iot.name} ${adt.name} ${resourceGroup().name} ${location} ${eventGridChangeLogTopic.name} ${eventGridChangeLogTopic.id} ${funcApp.id} ${storage.name} ${fileContainerName}'
-    primaryScriptUri: 'https://raw.githubusercontent.com/MicrosoftDocs/mslearn-mr-adt-in-unity/main/ARM-Template/postdeploy.sh'
+    primaryScriptUri: 'https://raw.githubusercontent.com/Thiennam209/ARM-Template-IoT-Cube/main/postdeploy.sh'
     supportingScriptUris: []
     timeout: 'PT30M'
     cleanupPreference: 'OnExpiration'
