@@ -1,5 +1,5 @@
-$projectname="adtstore"
-$appreg="adtstore"
+$projectname="adtauto"
+$appreg="adtauto"
 az account set --subscription SPD.MTV.2022
 az ad sp create-for-rbac --name ${appreg} --role Contributor --scopes /subscriptions/851a3e64-bc9a-4d4c-b20e-fde1b7055938 --skip-assignment > AppCredentials.txt
 $objectid=$(az ad sp list --display-name ${appreg} --query [0].id --output tsv)

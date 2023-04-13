@@ -15,56 +15,11 @@ namespace SignalRFunctions
 {
     public static class SignalRFunctions
     {
-        public static string storeid;
+        public static string deviceid;
         public static string TimeInterval;
-        public static int ShelfId;
-        public static int ProductId;
-        public static string ProductName;
-        public static string ProductCategory;
-        public static string ProductOnShelfName;
-        public static int ProductSellingRank;
-        public static int ProductSalesLastDay;
-        public static int ProductSalesLastMonth;
-        public static int ProductSalesLast3Months;
-        public static float ProductPrice;
-        public static float ProductCost;
-        public static float ProductSalesOffPercents;
-        public static float ProductMarketingCost;
-        public static float ProductProfitPerItem;
-        public static float ProductRevenueLastDay;
-        public static float ProductRevenueLastMonth;
-        public static float ProductRevenueLast3Months;
-        public static float ProductProfitLastDay;
-        public static float ProductProfitLastMonth;
-        public static float ProductProfitLast3Months;
-        public static string ProductImageURL;
-        public static int ShelfRank;
-        public static int ShelfCustomerQuantityLastDay;
-        public static int ShelfCustomerQuantityLastMonth;
-        public static int ShelfCustomerQuantityLast3Months;
-        public static string ShelfProductNames;
-        public static int ShelfItemQuantity;
-        public static int ShelfSalesLastDay;
-        public static int ShelfSalesLastMonth;
-        public static int ShelfSalesLast3Months;
-        public static float ConversionRateLastDay;
-        public static float ConversionRateLastMonth;
-        public static float ConversionRateLast3Months;
-        public static float ShelfRevenueLastDay;
-        public static float ShelfRevenueLastMonth;
-        public static float ShelfRevenueLast3Months;
-        public static float ShelfProfitLastDay;
-        public static float ShelfProfitLastMonth;
-        public static float ShelfProfitLast3Months;
-        public static int StoreSalesLastDay;
-        public static int StoreSalesLastMonth;
-        public static int StoreSalesLast3Months;
-        public static float StoreRevenueLastDay;
-        public static float StoreRevenueLastMonth;
-        public static float StoreRevenueLast3Months;
-        public static float StoreProfitLastDay;
-        public static float StoreProfitLastMonth;
-        public static float StoreProfitLast3Months;
+        public static double gyroscopeX;
+        public static double gyroscopeY;
+        public static double gyroscopeZ;
 
 
         [FunctionName("negotiate")]
@@ -103,14 +58,14 @@ namespace SignalRFunctions
             {
                 try
                 {
-                    storeid = eventGridEvent.Subject;
+                    deviceid = eventGridEvent.Subject;
 
                     var data = eventGridData.SelectToken("data");
                     var patch = data.SelectToken("patch");
 
                     var property = new Dictionary<object, object>
                     {
-                        {"storeid", storeid }
+                        {"deviceid", deviceid }
                     };
                     return signalRMessages.AddAsync(
                         new SignalRMessage
