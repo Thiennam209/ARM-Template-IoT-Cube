@@ -32,12 +32,9 @@ git clone https://github.com/Thiennam209/ARM-Template-IoT-Cube
 deviceid=$(az dt model create -n $adtname --models ./ARM-Template-IoT-Cube/models/iot.json --query [].id -o tsv)
 
 # echo 'instantiate ADT Instances'
-#for i in {1..48}
-#do
-    echo "Create Turbine deviceid$i"
-    az dt twin create -n $adtname --dtmi $deviceid --twin-id "deviceid$i"
-    az dt twin update -n $adtname --twin-id "deviceid$i" --json-patch '[{"op":"add", "path":"/deviceid", "value": "'"deviceid$i"'"}]'
-#done
+echo "Create IoT device deviceid1"
+az dt twin create -n $adtname --dtmi $deviceid --twin-id "deviceid1"
+az dt twin update -n $adtname --twin-id "deviceid1" --json-patch '[{"op":"add", "path":"/deviceid", "value": "'"deviceid1"'"}]'
 
 # az eventgrid topic create -g $rgname --name $egname -l $location
 az dt endpoint create eventgrid --dt-name $adtname --eventgrid-resource-group $rgname --eventgrid-topic $egname --endpoint-name "$egname-ep"
