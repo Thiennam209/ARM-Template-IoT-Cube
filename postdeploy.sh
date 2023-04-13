@@ -26,15 +26,18 @@ az config set extension.use_dynamic_install=yes_without_prompt
 az extension add --name azure-iot -y
 
 # echo 'retrieve files'
-git clone https://github.com/Thiennam209/ARM-Template-IoT-Cube
+git clone https://github.com/Thiennam209/new-store-adt
 
 # echo 'input model'
-deviceid=$(az dt model create -n $adtname --models ./ARM-Template-IoT-Cube/models/iot.json --query [].id -o tsv)
+storeid=$(az dt model create -n $adtname --models ./new-store-adt/models/store.json --query [].id -o tsv)
 
 # echo 'instantiate ADT Instances'
-echo "Create IoT device deviceid1"
-az dt twin create -n $adtname --dtmi $deviceid --twin-id "deviceid1"
-az dt twin update -n $adtname --twin-id "deviceid1" --json-patch '[{"op":"add", "path":"/deviceid", "value": "'"deviceid1"'"}]'
+for i in {1..48}
+do
+    echo "Create Turbine storeid$i"
+    az dt twin create -n $adtname --dtmi $storeid --twin-id "storeid$i"
+    az dt twin update -n $adtname --twin-id "storeid$i" --json-patch '[{"op":"add", "path":"/storeid", "value": "'"storeid$i"'"}]'
+done
 
 # az eventgrid topic create -g $rgname --name $egname -l $location
 az dt endpoint create eventgrid --dt-name $adtname --eventgrid-resource-group $rgname --eventgrid-topic $egname --endpoint-name "$egname-ep"
@@ -44,4 +47,4 @@ az dt route create --dt-name $adtname --endpoint-name "$egname-ep" --route-name 
 az eventgrid event-subscription create --name "$egname-broadcast-sub" --source-resource-id $egid --endpoint "$funcappid/functions/broadcast" --endpoint-type azurefunction
 
 # Retrieve and Upload models to blob storage
-az storage blob upload-batch --account-name $storagename -d $containername -s "./ARM-Template-IoT-Cube/assets"
+az storage blob upload-batch --account-name $storagename -d $containername -s "./new-store-adt/assets"

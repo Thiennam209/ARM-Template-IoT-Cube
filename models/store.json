@@ -1,0 +1,263 @@
+{
+  "@id": "dtmi:digitaltwins:Basic:Store;1",
+  "@type": "Interface",
+  "@context": ["dtmi:dtdl:context;2"],
+  "displayName": "Ecommerce Store",
+  "description": "Ecommerce Store data",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "storeid",
+      "displayName": "storeid",
+      "description": "The unique id of the store shelfs and products",
+      "writable": true,
+      "schema": "string"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "TimeInterval",
+      "description": "The time interval of this data",
+      "schema": "string"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfId",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductId",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductName",
+      "schema": "string"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductCategory",
+      "schema": "string"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductOnShelfName",
+      "schema": "string"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductSellingRank",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductSalesLastDay",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductSalesLastMonth",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductSalesLast3Months",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductPrice",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductCost",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductSalesOffPercents",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductMarketingCost",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductProfitPerItem",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductRevenueLastDay",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductRevenueLastMonth",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductRevenueLast3Months",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductProfitLastDay",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductProfitLastMonth",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductProfitLast3Months",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ProductImageURL",
+      "schema": "string"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfRank",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfCustomerQuantityLastDay",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfCustomerQuantityLastMonth",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfCustomerQuantityLast3Months",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfProductNames",
+      "schema": "string"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfItemQuantity",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfSalesLastDay",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfSalesLastMonth",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfSalesLast3Months",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ConversionRateLastDay",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ConversionRateLastMonth",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ConversionRateLast3Months",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfRevenueLastDay",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfRevenueLastMonth",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfRevenueLast3Months",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfProfitLastDay",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfProfitLastMonth",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ShelfProfitLast3Months",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "StoreSalesLastDay",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "StoreSalesLastMonth",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "StoreSalesLast3Months",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "StoreRevenueLastDay",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "StoreRevenueLastMonth",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "StoreRevenueLast3Months",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "StoreProfitLastDay",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "StoreProfitLastMonth",
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "StoreProfitLast3Months",
+      "schema": "float"
+    }
+  ]
+}
