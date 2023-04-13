@@ -41,17 +41,19 @@ namespace My.Function
                 {
 
                     JObject deviceMessage = (JObject)JsonConvert.DeserializeObject(eventGridEvent.Data.ToString());
-                    string deviceId = (string)deviceMessage["systemProperties"]["iothub-connection-device-id"];
-                    var ID = deviceMessage["body"]["deviceid"];
+                    // string deviceId = (string)deviceMessage["systemProperties"]["iothub-connection-device-id"];
+                    // var ID = deviceMessage["body"]["deviceid"];
+                    string deviceId = "deviceid1";
+                    var ID = "deviceid1";
                     var TimeInterval = deviceMessage["body"]["TimeInterval"];
                     var gyroscopeX = deviceMessage["body"]["gyroscopeX"];
                     var gyroscopeY = deviceMessage["body"]["gyroscopeY"];
                     var gyroscopeZ = deviceMessage["body"]["gyroscopeZ"];
-                    
+
                     log.LogInformation($"Device:{deviceId} Device Id is: {ID}");
                     log.LogInformation($"Device:{deviceId} Time interval is: {TimeInterval}");
                     log.LogInformation($"Device:{deviceId} gyroscopeX is: {gyroscopeX}");
-                    
+
                     var updateProperty = new JsonPatchDocument();
                     var turbineTelemetry = new Dictionary<string, Object>()
                     {
@@ -61,7 +63,7 @@ namespace My.Function
                         ["gyroscopeY"] = gyroscopeY,
                         ["gyroscopeZ"] = gyroscopeZ,
                     };
-                    updateProperty.AppendAdd("/deviceid", ID.Value<string>());
+                    updateProperty.AppendAdd("/deviceid", "deviceid1");
 
                     log.LogInformation(updateProperty.ToString());
                     try
