@@ -46,6 +46,9 @@ namespace My.Function
                     string deviceId = "deviceid1";
                     var ID = "deviceid1";
                     var TimeInterval = deviceMessage["body"]["TimeInterval"];
+                    var accelerometerX = deviceMessage["body"]["accelerometerX"];
+                    var accelerometerY = deviceMessage["body"]["accelerometerY"];
+                    var accelerometerZ = deviceMessage["body"]["accelerometerZ"];
                     var gyroscopeX = deviceMessage["body"]["gyroscopeX"];
                     var gyroscopeY = deviceMessage["body"]["gyroscopeY"];
                     var gyroscopeZ = deviceMessage["body"]["gyroscopeZ"];
@@ -59,6 +62,9 @@ namespace My.Function
                     {
                         ["deviceid"] = ID,
                         ["TimeInterval"] = TimeInterval,
+                        ["accelerometerX"] = accelerometerX,
+                        ["accelerometerY"] = accelerometerY,
+                        ["accelerometerZ"] = accelerometerZ,
                         ["gyroscopeX"] = gyroscopeX,
                         ["gyroscopeY"] = gyroscopeY,
                         ["gyroscopeZ"] = gyroscopeZ,

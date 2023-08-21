@@ -21,21 +21,42 @@
       "schema": "string"
     },
     {
-      "@type": ["Telemetry", "AngularVelocity"],
+      "@type": "Telemetry",
+      "name": "accelerometerX",
+      "displayName": "Accelerometer X",
+      "schema": "double",
+      "unit": "degreePerSecond"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "accelerometerY",
+      "displayName": "Accelerometer Y", 
+      "schema": "double",
+      "unit": "degreePerSecond"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "accelerometerZ",
+      "displayName": "Accelerometer Z",
+      "schema": "double",
+      "unit": "degreePerSecond"
+    },
+    {
+      "@type": "Telemetry",
       "name": "gyroscopeX",
       "displayName": "Gyroscope X",
       "schema": "double",
       "unit": "degreePerSecond"
     },
     {
-      "@type": ["Telemetry", "AngularVelocity"],
+      "@type": "Telemetry",
       "name": "gyroscopeY",
       "displayName": "Gyroscope Y", 
       "schema": "double",
       "unit": "degreePerSecond"
     },
     {
-      "@type": ["Telemetry", "AngularVelocity"],
+      "@type": "Telemetry",
       "name": "gyroscopeZ",
       "displayName": "Gyroscope Z",
       "schema": "double",

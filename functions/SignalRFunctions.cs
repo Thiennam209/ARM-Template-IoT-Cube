@@ -17,6 +17,15 @@ namespace SignalRFunctions
     {
         public static string deviceid;
         public static string TimeInterval;
+        public static double humidity;
+        public static double temperature;
+        public static double pressure;
+        public static double magnetometerX;
+        public static double magnetometerY;
+        public static double magnetometerZ;
+        public static double accelerometerX;
+        public static double accelerometerY;
+        public static double accelerometerZ;
         public static double gyroscopeX;
         public static double gyroscopeY;
         public static double gyroscopeZ;
